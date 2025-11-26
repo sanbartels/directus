@@ -8,8 +8,19 @@ Antes de ejecutar este proyecto, asegúrate de tener:
 
 - **Docker** ≥ 20.x  
 - **Docker Compose** ≥ 2.x  
-- La red Docker `agrosavia-network` **ya creada**  
+- La red Docker `agrosavia-network` creada
 - Una instancia de **Supabase** activa y accesible
+
+### Configuración del Schema en Supabase
+
+Ejecuta el siguiente script SQL en el editor de Supabase para crear el schema de Directus:
+```sql
+CREATE SCHEMA IF NOT EXISTS directus;
+GRANT ALL ON SCHEMA directus TO supabase;
+GRANT ALL ON SCHEMA directus TO authenticated;
+```
+
+**Nota:** Esto permite que las tablas del sistema de Directus se oculten del Table Editor de Supabase mientras mantiene el acceso completo a las tablas de tu aplicación en el schema `public`.
 
 
 ## ⚙️ Configuración
