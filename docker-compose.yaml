@@ -2,7 +2,6 @@ services:
   directus:
     image: directus/directus:latest
     container_name: directus
-    restart: unless-stopped
     ports:
       - "8200:8055"
     networks:
@@ -17,6 +16,7 @@ services:
       DB_USER: ${SUPABASE_DB_USER}
       DB_PASSWORD: ${SUPABASE_DB_PASSWORD}
       DB_SSL: 'false'
+      DB_SEARCH_PATH: 'directus,public' 
       ADMIN_EMAIL: ${ADMIN_EMAIL}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     env_file:
