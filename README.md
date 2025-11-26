@@ -51,7 +51,7 @@ docker compose up -d --build
 
 Una vez iniciado, accede a la interfaz de Directus desde tu navegador en:
 
-👉 http://tuip:8002
+👉 http://tuip:8200
 👤 Inicio de sesión
 
 Usa las credenciales que configuraste en tu archivo .env
